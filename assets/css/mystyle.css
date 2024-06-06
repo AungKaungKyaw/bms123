@@ -1,0 +1,325 @@
+
+
+/**
+*colors
+* #191970
+* #212196
+* #2A2ABB
+* #3F3FD4
+* #6464DC
+**/
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #8C8C8C;
+    font-family: Arial, serif;
+}
+body{
+    /*background-color: #9696ff;*/
+}
+.container{
+    max-width: 1500px;
+    min-width: 500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.imgLogo{
+    width: 100px;
+    height: 60px;
+}
+.header_nav{
+    background-color: #E8E8E8;
+
+}
+.header_nav ul{
+    display: flex;
+    align-items: center;
+}
+.header_nav ul > :not(:first-child){
+    padding: 12px;
+}
+/*.header_nav ul > :not(:first-child):hover{
+    !*background-color: #6464DC;*!
+    padding: 12px;
+}*/
+.header_nav ul> :not(:first-child) a:hover{
+    color: #171717;
+}
+.header_nav{
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: space-between;
+}
+.content{
+    width: 100%;
+    min-height: 90vh;
+}
+.footer{
+    background-color: #1f1f1f;
+    max-height: 500px;
+    min-height: 200px;
+}
+.inputHeader{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 2px 5px;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .container ul li{
+    padding: 10px;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+.footer p{
+    text-align: center;
+    padding: 10px 0px;
+}
+
+/*home*/
+.midContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.midContent h1{
+    font-size: 50px;
+}
+.midContent p{
+    margin-top: 20px;
+    text-align: center;
+}
+.midContent ul{
+    margin-top: 100px;
+}
+.midContent ul li{
+    display: inline-block;
+    padding: 20px 30px;
+    width: 120px;
+    background-color: #8C8C8C;
+    margin: 0px 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.midContent ul li a{
+    color: #ffff;
+}
+
+/*login.php*/
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-color: #E8E8E8;
+    border-radius: 5px;
+
+    width: 20vw;
+    margin: 50px auto;
+}
+.form > :not(:last-child){
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 40%;
+}
+.form :last-child{
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/*userDashboard*/
+.userDashboard{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.userSidebar{
+    width: 200px;
+    background-color: #E8E8E8;
+
+}
+.userProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userProfile img{
+    width: 30%;
+}
+.userSidebar ul{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: flex-start;
+}
+.userSidebar ul :last-child{
+    margin-top: auto;
+}
+.userSidebar ul li{
+    padding: 10px;
+}
+.userSidebar ul li:hover a{
+    color: #171717;
+}
+.userRightbar{
+    padding: 20px;
+    width: 100%;
+    /*background-color: bisque;*/
+}
+.balanceCaption{
+    margin-top: 20px;
+    width: 100%;
+    text-align: right;
+    padding: 10px 0px 10px 0px;
+}
+.balance{
+    text-align: right;
+    padding: 10px 0px 10px 0px;
+}
+.userDescription p:nth-child(n+4){
+    display: inline-block;
+    background-color: #E8E8E8;
+    padding: 15px 20px;
+    width: 80px;
+    border-radius: 5px;
+    text-align: center;
+}
+.userDescription p:nth-child(n+4):hover button{
+    /*background-color: #6464DC;*/
+    color: #171717;
+}
+.userDescription button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.transactionHistory {
+    width: 100%;
+    display: block;
+}
+
+.transactionHistory table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.transactionHistory table td,
+.transactionHistory table th {
+    border: 1px solid #E1e1ff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.transactionHistory table tr:nth-child(even) {
+    background: #E8E8E8;
+}
+.show {
+    display: block;
+    /*width: 100%;*/
+}
+.hide {
+    display: none;
+}
+.depositForm{
+    width: 80%;
+    /*background-color: tomato;*/
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+.depositForm input, .depositForm button, .depositForm p{
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #E8E8E8;
+    margin-top: 10px;
+}
+.depositForm button{
+    width: 100px;
+}
+.depositForm p{
+    cursor: pointer;
+}
+.tableDiv {
+    margin-top: 20px;
+}
+
+.adminTable td, .adminTable th{
+    border: 1px solid #8C8C8C;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.adminTable tr:nth-child(even) {
+    background: #E8E8E8;
+}
+.adminForm{
+    width: 80%;
+    /*background-color: tomato;*/
+    margin-top: 15px;
+}
+.inputWidth{
+    width: 120px;
+}
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    /*min-height: 80vh;*/
+    background-color: #E8E8E8;
+    border-radius: 5px;
+    /*width: 45%;*/
+}
+.registerForm input{
+    /*background-color: #E8E8E8;*/
+    margin: 10px;
+    width: 30vw;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);;
+}
+.registerForm label, .registerForm span{
+    padding: 10px;
+}
+.registerForm span{
+    color: red;
+    font-size: 15px;
+}
+.registerForm button{
+    width: 10vw;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #E8E8E8;
+    margin: 10px;
+    box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+    cursor: pointer;
+}
+
+
