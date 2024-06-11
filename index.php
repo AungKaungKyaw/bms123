@@ -87,6 +87,9 @@ switch ($uri){
             break;
         }
         break;
+    case '/serviceSupport':
+        HomeController::serviceSupport();
+        break;
     default:
         require 'Views/404.php';
         break;
