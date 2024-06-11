@@ -21,5 +21,11 @@ class HomeController{
     public static function showRegister(){
         include 'Views/register.php';
     }
+    public static function teamCondition(){
+        include 'Views/teamCondition.php';
+    }
+    public static function partners(){
+        include 'Views/partners.php';
+    }
 
 }

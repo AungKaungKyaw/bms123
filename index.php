@@ -2,10 +2,7 @@
 session_start();
 require 'config/init.php';
 include 'Controller/HomeController.php';
-
-
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-//echo $uri;
 switch ($uri){
     case '/home':
     case '/':
@@ -53,8 +50,13 @@ switch ($uri){
         UserController::logout();
         break;
     case '/deposit':
-        $user = new UserController();
-        $user->deposit();
+        if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+            $user = new UserController();
+            $user->deposit();
+        }else{
+            $_SESSION['msg'] = 'login first';
+            require 'Views/login.php';
+        }
         break;
     case '/withdraw':
         $user = new UserController();
@@ -67,7 +69,24 @@ switch ($uri){
     case '/register':
         HomeController::showRegister();
         break;
-
+    case '/privacyPolicy':
+    case '/teamCondition':
+        HomeController::teamCondition();
+        break;
+    case '/partners':
+        HomeController::partners();
+        break;
+    case '/signup':
+        if(isset($_SESSION['login']) != false){
+            $_SESSION['msg'] = 'Already login';
+            HomeController::show();
+            break;
+        }else{
+            HomeController::contact();
+            $_SESSION['msg'] = 'Contact us to create account';
+            break;
+        }
+        break;
     default:
         require 'Views/404.php';
         break;

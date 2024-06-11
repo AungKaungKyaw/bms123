@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form as List</title>
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .form-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            width: 100px; /* Adjust as needed */
+        }
+
+        .form-input {
+            flex-grow: 1;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-submit {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form-submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+
+    <table>
+        <thead>
+        <tr>
+            <th>email</th>
+            <th>phone</th>
+            <th>town</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>@mgial</td>
+            <td>01293</td>
+            <td><button class="delbtn">click here</button></td>
+        </tr>
+        <tr>
+            <td>@asdf</td>
+            <td>56756</td>
+            <td><button class="delbtn">click here</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    document.querySelectorAll('.delbtn').forEach(function(button){
+        button.addEventListener('click', function (){
+            let row = button.parentNode.parentNode
+            let first_child = row.children[0]
+            let second_child = row.children[1]
+            let third_child = row.children[2]
+            console.log(first_child);
+        })
+    })
+</script>
+</body>
+</html>

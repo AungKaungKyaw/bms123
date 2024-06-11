@@ -54,7 +54,7 @@ body{
 }
 .content{
     width: 100%;
-    min-height: 90vh;
+    min-height: 80vh;
 }
 .footer{
     background-color: #1f1f1f;
@@ -92,6 +92,9 @@ body{
     align-items: center;
     min-height: 80vh;
 }
+.note{
+    color: #ff1b6b;
+}
 .midContent h1{
     font-size: 50px;
 }
@@ -106,13 +109,21 @@ body{
     display: inline-block;
     padding: 20px 30px;
     width: 120px;
-    background-color: #8C8C8C;
+    background-color: #3b757f;
     margin: 0px 20px;
     text-align: center;
     border-radius: 5px;
 }
 .midContent ul li a{
+    display: block;
+    transition: 0.9s ease-in-out;
     color: #ffff;
+}
+.midContent ul li{
+    transition: 0.3s ease-in-out;
+}
+.midContent ul li:hover {
+    background-color: #5faab1;
 }
 
 /*login.php*/
@@ -216,20 +227,23 @@ body{
     display: block;
 }
 
-.transactionHistory table {
+.transactionHistory table
+{
     width: 100%;
     border-collapse: collapse;
     margin-top: 30px;
 }
 
 .transactionHistory table td,
-.transactionHistory table th {
+.transactionHistory table th,
+.userRequest table td, th{
     border: 1px solid #E1e1ff;
     padding: 10px;
     box-sizing: border-box;
 }
 
-.transactionHistory table tr:nth-child(even) {
+.transactionHistory table tr:nth-child(even),
+.userRequest table tr:nth-child(even){
     background: #E8E8E8;
 }
 .show {
@@ -321,5 +335,214 @@ body{
     -moz-box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
     cursor: pointer;
 }
+.getInTouch{
+    text-align: center;
+    font-size: 50px;
+}
+.contactMidContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.headingGetintouch h1{
+    text-align: center;
+    font-size: 50px;
+    padding: 30px 0px;
+    margin-top: 30px;
+}
+.contactMidDiv{
+    height: 400px;
+    width: 20vw;
+    background-color: #3b757f;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(148,148,148,0.75);
+}
+.contactMidDiv i, .contactMidDiv ul{
+    margin-top: 20px;
+}
+.contactInfoList{
+    margin-top: 20px;
+}
+.contactInfoList h1, .contactInfoList p{
+    margin-top: 10px;
+    color: white;
+}
+.btn{
+    border-radius: 5px;
+    border: none;
+    background-color: #E8E8E8;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+.circle_icon{
+    background: #f1faee;
+    padding:20px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+.aboutMidContent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.aboutMidContent div{
+    width: 50%;
+    /*background-color: #80ed99;*/
+}
+.workingImg{
+    width: 100%;
+}
+.aboutUsImgDiv, .aboutUsDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.aboutUsDiv{
+    flex-direction: column;
+    align-items: start;
 
+}
+.aboutUsDiv h1, .aboutUsDiv p, .aboutUsDiv ul, .btn{
+    /*background-color: tomato;*/
+    padding: 10px;
+}
+.ulStyle li{
+    list-style-type: circle;!important;
+    margin-left: 10px;
+    padding: 10px;
+}
+.btnContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: tomato;
+}
+.btn{
+    border: none;
+    padding: 15px 30px;
+    font-size: 17px;
+    background-color: #3b757f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: #5faab1;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
 
+.containerLeave {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.containerLeave h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input[type="email"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="submit"] {
+    background: #3b757f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input[type="submit"]:hover {
+    background: #5faab1;
+}
+.centerDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.team-condition{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80vh;
+    padding: 10px;
+}
+.team-condition p, .team-condition h1, .team-condition h2{
+    padding: 10px;
+    color: #325158;
+}
+.highlight{
+    background-color: #ddeff0;
+}
+.ourpartner{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    /*background-color: #438e96;*/
+    color: #1a2c32;
+}
+.partnerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.partnerContainer h1{
+    text-align: center;
+    padding: 10px;
+    margin-top: 100px;
+    font-size: 50px;
+}
+.partnerImg{
+    width: 120px;
+}
+.ourpartner p{
+    text-align: center;
+}

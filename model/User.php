@@ -34,18 +34,20 @@ class User{
             $this->transUserHis($result['userId']);
             return "user";
         }else{
-            $query = "SELECT * FROM admin WHERE name = :admin";
+            $query = "SELECT * FROM admin WHERE name = :admin and password = :password";
             $statement = $this->pdo->prepare($query);
 //        email in statement represent $email
 //        it will replace 'email' with $email
             $statement->execute([
-                'admin' => $email
+                'admin' => $email,
+                'password' => $password
             ]);
             $result = $statement->fetch(PDO::FETCH_ASSOC);
             if($result){
                 $this->username = $result['name'];
                 $_SESSION['admin'] = $result['name'];
                 $_SESSION['login'] = true;
+                $this->userRequests();
                 $this->transUserHis('admin');
                 return 'admin';
             }
@@ -71,7 +73,6 @@ class User{
     public function updateValue2($id,$balance){
         try {
             $query = "UPDATE useraccount SET balance = :balance WHERE userId = :id";
-            $_SESSION['msg5'] = "<br><br><br>UPDATE useraccount SET balance = $balance WHERE userId = $id";
             $statement = $this->pdo->prepare($query);
             $statement->execute([
                 'balance' => $balance,
@@ -157,7 +158,6 @@ class User{
             'date' => $date
         ]);
 
-        $_SESSION['msg2'] = "<br><br><br>transhisoty :INSERT INTO `transferhistory` (`transferId`, `currentUserId`, `receiverUserId`, `amount`, `date`) VALUES (NULL, $currentUserId, $receiverUserId, $amount, :date)<br><br><br>";
     }
     public function updateTransactionHistory($desc,$id){
         if($desc == "depositOrWithdraw"){
@@ -363,6 +363,48 @@ where userId = :userId";
             return true;
         }catch(PDOException $e){
             echo "Error : registering user information : ".$e->getMessage();
+        }
+    }
+    public function userContact($email,$phone){
+        $query = "insert into contactlist (email, phone, date, isdone) values (:email, :phone, :date, 0);";
+        try{
+            $statement = $this->pdo->prepare($query);
+            $statement->execute([
+                'email' => $email,
+                'phone' => $phone,
+                'date' => date('Y-m-d H:i:s')
+            ]);
+            return true;
+        }
+        catch(PDOException $e){
+            echo "Error : registering user information : ".$e->getMessage();
+            return false;
+        }
+    }
+    public function userRequests(){
+        $query = "select * from contactlist where isdone = false limit 5";
+        try {
+            $statement = $this->pdo->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchall(PDO::FETCH_ASSOC);
+            $_SESSION['userRequestList'] = json_encode($result);
+            return json_encode($result);
+        } catch (PDOException $e) {
+            $_SESSION['error'] = "Error : getting user requests : " . $e->getMessage();
+        }
+    }
+    public function updateDelete($id){
+        $query = "update contactlist set isdone = true where id = :id;";
+        try{
+            $statement = $this->pdo->prepare($query);
+            $statement->execute([
+                'id' => $id
+            ]);
+            return $this->userRequests();
+        }
+        catch(PDOException $e){
+            echo "Error : registering user information : ".$e->getMessage();
+            return false;
         }
     }
 }

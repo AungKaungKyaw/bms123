@@ -17,10 +17,10 @@ echo <<<HTML
         <li>Blah blah</li>
     </ul>
     <ul class="icons">
-        <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
-        <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
-        <li><a href=""><i class="fa-brands fa-square-x-twitter"></i></a></li>
-        <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+        <li><a href="https://www.facebook.com/sai.tha.718/"><i class="fa-brands fa-square-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a></li>
+        <li><a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-youtube"></i></a></li>
     </ul>
 </section>
     <p>copyright to all</p>

@@ -15,7 +15,7 @@ for(let i = 3; i < 8; i++){
         toshow[i-3].classList.add('show');
     })
 }
-function reqData(id, callback){
+function reqData(id, action, callback){
     const xhr = new XMLHttpRequest();
     const url = 'http://127.0.0.1:8000/Controller/phpreq.php';
     xhr.open('POST',url);
@@ -34,7 +34,8 @@ function reqData(id, callback){
         }
     }
     let jsonData = JSON.stringify({
-        id: id
+        id: id,
+        action: action
     })
     // console.log(jsonData);
     xhr.send(jsonData);
@@ -42,10 +43,15 @@ function reqData(id, callback){
 const btn = document.getElementById('checkUserbtn');
 btn.addEventListener('click',()=>{
     const input = document.getElementById('anotherUserId');
-    reqData(input.value,(data)=>{
+    reqData(input.value,'checkUser',(data)=>{
         document.getElementById('anotherUserName').innerText = data;
     })
 })
-
-
-
+window.onload = function(){
+    reqData(0,'update',function(data){
+        data = JSON.parse(data);
+        console.log(data);
+        userRequestList(data);
+        addlisten();
+    })
+}

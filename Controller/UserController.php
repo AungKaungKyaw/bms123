@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'model/dbcon.php';
 require_once 'model/User.php';
 class UserController{
@@ -146,9 +147,21 @@ class UserController{
         if($user->registerUser($username, $password, $email, $phone, $balance, $StateCode, $TownshipCode)){
             $_SESSION['msg'] = "success";
             header('Location: adminDashboard');
+            ob_flush();
         } else {
             $_SESSION['msg'] = "failed";
             header('Location: adminDashboard');
+        }
+    }
+    public function contact($email,$phone){
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->db = $pdo;
+        $user = new User($this->db);
+        if($user->userContact($email,$phone)){
+            $_SESSION['msg'] = "success";
+        } else {
+            $_SESSION['msg'] = "failed";
         }
     }
 }

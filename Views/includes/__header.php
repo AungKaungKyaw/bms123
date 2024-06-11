@@ -23,7 +23,7 @@
             <li><input class="inputHeader" type="text" placeholder="Search"></li>
             <?php if(!isset($_SESSION['login'])) : ?>
             <li><a href="login">login</a></li>
-            <li><a href="signUp">sign up</a></li>
+            <li><a href="signup">sign up</a></li>
             <?php else : ?>
             <li><a href="logout">logout</a></li>
             <?php endif ?>
