@@ -27,5 +27,8 @@ class HomeController{
     public static function partners(){
         include 'Views/partners.php';
     }
+    public static function serviceSupport(){
+        include 'Views/contact.php';
+    }
 
 }
